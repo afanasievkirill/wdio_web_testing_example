@@ -1,6 +1,7 @@
 const allure = require('allure-commandline');
 
 exports.config = {
+	runner: 'local',
 	headless: true,
 	specs: ['./test/specs/**/*.js'],
 	exclude: [
@@ -17,6 +18,7 @@ exports.config = {
 		],
 	},
 	hostname: 'localhost',
+	port: 4444,
 	path: '/wd/hub',
 	maxInstances: 10,
 	capabilities: [
