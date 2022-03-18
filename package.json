@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx wdio",
-    "test:android": "npx wdio wdio.android.conf.js",
-    "test:ios": "npx wdio wdio.ios.conf.js",
-    "prettier": "npx prettier --write test/*",
-    "lint": "eslint ./test/**/**/*.js",
-    "lint:fix": "eslint ./test/**/**/*.js --fix",
-    "codestyle": "npm run prettier && npm run eslint ./test/**/**/*.js"
+    "test": "npx wdio ./test/config/wdio.selenide.conf.js",
+    "test:pages": "npx wdio ./test/config/wdio.chrome.conf.js --suite pages",
+    "test:specs": "npx wdio ./test/config/wdio.chrome.conf.js --suite specs",
+    "allure": "allure generate && allure open",
+    "prettier": "npx prettier --write ./test/**/*.js",
+    "lint": "eslint ./test/**/*.js",
+    "lint:fix": "eslint ./test/**/*.js --fix",
+    "codestyle": "npm run prettier && npm run eslint ./test/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,7 @@
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.4",
     "@babel/register": "^7.15.3",
-    "@faker-js/faker": "^6.0.0-beta.0",
+    "@faker-js/faker": "^6.0.0",
     "@wdio/allure-reporter": "^7.10.1",
     "@wdio/local-runner": "^7.9.1",
     "@wdio/mocha-framework": "^7.9.1",
